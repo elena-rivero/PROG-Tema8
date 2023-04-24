@@ -1,6 +1,6 @@
 package prueba;
 
-public class Persona {
+public class Persona implements Sonido, Comparable {
 	String nombre;
 	int edad;
 	double estatura;
@@ -34,6 +34,25 @@ public class Persona {
 			res = true;
 		}
 
+		return res;
+	}
+
+	@Override
+	public void voz() {
+		System.out.println("Hola");
+	}
+
+	@Override
+	public int compareTo(Object o) {
+		
+		Persona per = (Persona) o;
+		
+		int res = this.edad-per.edad;
+		
+		if(res == 0){
+			res = this.nombre.compareTo(per.nombre);
+		}
+		
 		return res;
 	}
 }
