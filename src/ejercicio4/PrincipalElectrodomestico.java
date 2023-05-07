@@ -35,7 +35,6 @@ public class PrincipalElectrodomestico {
 		System.out.println("Precio electrodomésticos: " + precioElectrodomesticos);
 		System.out.println("Precio lavadoras: " + precioLavadoras);
 		System.out.println("Precio televisiones: " + precioTelevisiones);
-		
 
 	}
 
