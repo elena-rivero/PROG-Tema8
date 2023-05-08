@@ -37,9 +37,8 @@ public class Electrodomestico {
 		if (peso > 0) {
 			this.peso = peso;
 		}
-		// TODO: Conversión entre String y los enumerados
-		// this.color = color;
-		// this.consumo = consumo;
+		comprobarColor(color);
+		comprobarConsumeEnergetico(consumo);
 	}
 
 	public double getPrecioBase() {
@@ -47,22 +46,36 @@ public class Electrodomestico {
 	}
 
 	public String getColor() {
-		// TODO: Devolver el color como cadena
-		return "";
+		return String.valueOf(this.color);
 	}
 
 	public String getConsumo() {
-		// TODO: Devolver el consumo como cadena
-		return "";
+		return String.valueOf(this.consumo);
 	}
 
 	public double getPeso() {
 		return peso;
 	}
 
-	// TODO: comprobarConsumoEnergetico
+	public void comprobarConsumeEnergetico(char letra) {
+		switch (letra) {
+		case 'A', 'B', 'C', 'D', 'E', 'F':
+			this.consumo = ConsumoEnergetico.valueOf(String.valueOf(letra));
+			break;
+		default:
+			this.consumo = ConsumoEnergetico.F;
+		}
+	}
 
-	// TODO: comprobarColor
+	public void comprobarColor(String color) {
+		switch (color) {
+		case "blanco", "negro", "rojo", "azul", "gris":
+			this.color = Color.valueOf(color);
+			break;
+		default:
+			this.color = Color.blanco;
+		}
+	}
 
 	public double precioFinal() {
 		double precioFinal = precioBase;
@@ -99,4 +112,5 @@ public class Electrodomestico {
 
 		return precioFinal;
 	}
+
 }

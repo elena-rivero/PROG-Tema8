@@ -1,5 +1,7 @@
 package ejercicio4;
 
+import java.util.Scanner;
+
 public class PrincipalElectrodomestico {
 
 	public static void main(String[] args) {
@@ -35,6 +37,9 @@ public class PrincipalElectrodomestico {
 		System.out.println("Precio electrodomésticos: " + precioElectrodomesticos);
 		System.out.println("Precio lavadoras: " + precioLavadoras);
 		System.out.println("Precio televisiones: " + precioTelevisiones);
+		
+		String consumo = electrodomesticos[0].getConsumo();
+		System.out.println(consumo);
 
 	}
 
